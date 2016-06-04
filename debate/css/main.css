@@ -1,0 +1,87 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+#header{
+	height: 70px;
+	background-color: lightgrey;
+}
+/*signup-form*/
+#main-content{
+	min-height: 100%;
+	margin-top: 40px;
+}
+#main-content > #signup{
+	margin: 10px auto;
+	width: 300px;
+	height: 590px;
+}
+#signup > .form-header{
+	width: 300px;
+	height: 110px;
+}
+.form-header > h1{
+	display: block;
+	text-align: center;
+}
+.form-header > h2{
+	margin-top: 10px;
+	display: block;
+	font-size: 1.0em;
+	text-align: center;
+	color: rgba(0,0,0,0.3);
+}
+.form-nav{
+	margin: 2px auto;
+	width: 300px;
+	height: 44px;
+}
+.navs-slider{
+	position: relative;
+	padding: 10px 25px 10px 25px;
+}
+.navs{
+	line-height: 35px;
+	font-size: 1.7em;
+	color: blue;
+	opacity: 0.4;
+	text-decoration: none;
+	margin-left: 45px;
+	
+}
+.form-view{
+	margin-top: 15px;
+}
+.input-type{
+	width: 300px;
+	height: 48px;
+	line-height: 48px;
+}
+.input-type input{
+	width: 292px;
+	height: 44px;
+	padding: 2px;
+	text-indent: 3px;
+	text-decoration: none;
+}
+.form-footer{
+	margin: 15px auto;	
+}
+.tab-submit{
+	background-color: #5bb8ff;
+	box-shadow: none;
+	border: 0px;
+	border-radius: 3px;
+	color: #fff;
+}
+#sign{
+	width: 300px;
+	height: 48px;
+	padding: 2px;
+	text-indent: 3px;
+	text-decoration: none;
+	cursor: pointer;
+}
+.form-actived{
+	display: none;
+}

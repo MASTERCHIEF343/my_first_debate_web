@@ -1,0 +1,235 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+#navigation{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	color: #fff;
+	background-color: #0767c8;
+}
+@media screen and (min-width: 900px) {
+	
+}
+@media screen and (max-width: 768px) {
+	*{
+		margin: 0px;
+		padding: 0px;
+	}
+	#navigation{
+		position: fixed;
+		width: 100%;
+		height: 245px;
+		background: url(../images/bg.jpg);
+		background-size: 100%;
+	}
+	#back_buttton{
+		position: absolute;
+		top: 20px;
+		left: 10px;
+		width: 30px;
+		height: 30px;
+		background: url(../images/arraow.png);
+		background-size: 100%;
+	}
+	#navigation > #navigation_content{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		border-bottom: 10px solid rgba(0,0,0,0.1);
+	}
+	#personal div{
+		position: relative;
+		margin: 70px auto;
+		margin-bottom: 0px;
+		width: 80px;
+		height: 80px;
+		background: url(../images/personal2.png);
+		background-size: 100%;
+		border-radius: 50%;
+	}
+	#personal span{
+		display: block;
+		position: relative;
+		margin: 7px auto;
+		left: -25px;
+		width: 50px;
+		height: 20px;
+		line-height: 20px;
+		font-size: 20px;
+		font-weight: 400;
+	}
+	#navigation > #navigation_content > #side_bar{
+		position: absolute;
+		bottom: 0px;
+		width: 100%;
+	}
+	.actived{
+		text-decoration: none;
+		display: block;
+		float: left;
+		position: relative;
+		background: none;
+		width: 50%;
+		height: 25px;
+		line-height: 20px;
+		font-size: 14px;
+		text-align: center;
+		font-weight: 300;
+		color: rgba(255,255,255,1);
+		border-bottom: 4px solid rgba(255,255,255,1);
+	}
+	.no_actived{
+		text-decoration: none;
+		display: block;
+		float: left;
+		position: relative;
+		background: none;
+		width: 50%;
+		height: 25px;
+		line-height: 20px;
+		font-size: 14px;
+		text-align: center;
+		font-weight: 300;
+		color: rgba(255,255,255,0.7);
+		border-bottom: 0px;
+	}
+	#main_content{
+		position: relative;
+		width: 100%;
+		top: 245px;
+	}
+	.show_div{
+		width: 100%;
+		height: 500px;
+	}
+	.hide_div{
+		display: none;
+	}
+	#personal_list,#setting_list{
+		padding-top: 10px;
+	}
+	#personal_list div:first-child{
+		width: 100%;
+		height: 187px;
+		border-top: 1px solid rgba(0,0,0,0.1);
+		border-bottom: 5px solid rgba(0,0,0,0.1);
+	}
+	#personal_list div:first-child ul{
+		position: relative;
+		width: 100%;
+		top: 10px;
+		height: 150px;
+		padding-top: 15px;
+		padding-bottom: 10px;
+	}
+	#personal_list div:first-child ul li{
+		float: left;
+		width: 33%;
+		height: 100%;
+		text-align: center;
+		list-style-type: none;
+	}
+	#personal_list div:first-child ul li span:first-child{
+		display: block;
+		color: rgba(0,0,0,0.8);
+		line-height: 80px;
+		font-size: 16px;
+	}
+	#personal_list div:first-child ul li span:last-child{
+		display: block;
+		margin-top: 7px;
+		font-weight: 600;
+		line-height: 24px;
+		font-size: 24px;
+	}
+	#personal_list div:last-child{
+		position: relative;
+		top: 0px;
+		border-top: 1px solid rgba(0,0,0,0.1);
+	} 
+	#personal_list div:last-child ul{
+		width: 100%;
+		padding-top: 10px;
+	}
+	#personal_list div:last-child ul li{
+		list-style-type: none;
+		width: 100%;
+		height: 40px;	
+		margin-top: 30px;
+	}
+	#personal_list div:last-child ul li:first-child{
+		margin-top: 10px;
+	}
+	#personal_list div:last-child ul li img{
+		display: block;
+		float: left;
+		margin-left: 30px;
+		margin-top: 5px;
+		width: 30px;
+		height: 30px;
+		border: none;
+	}
+	#personal_list div:last-child ul li span{
+		display: block;
+		float: left;
+		margin-left: 20px;
+		margin-top: 2px;
+		padding-top: 5px;
+		height: 40px;
+		width: 80%;
+		border-bottom: 3px solid rgba(0,0,0,0.1);
+	}
+	#personal_list div:last-child ul li i{
+		position: absolute;
+		right: 10%;
+	}
+	#setting_list div span a{
+		text-decoration: none;
+	}
+	#setting_list #setting_list_div{
+		width: 100%;
+		height: 160px;
+		padding-bottom: 10px;
+		border-bottom: 5px solid rgba(0,0,0,0.1);
+	}
+	#setting_list div span{
+		display: block;
+		width: 40%;
+		float: left;
+		height: 160px;
+	}
+	#setting_list div span h4{
+		width: 100%;
+		height: 100%;
+		font-size: 16px;
+		line-height: 160px;
+		text-indent: 50%;
+	}
+	#setting_list_form_div{
+		width: 60%;
+		float: left;
+		height: 160px;
+	}
+	.setting_list_div{
+		position: relative;
+		margin-top: 10px;
+		width: 100%;
+		height: 40px;
+		float: none;
+	}
+	.setting_list_div:first-child{
+		padding-top: 10px;
+	}
+	.setting_list_div input{
+		width: 50%;
+	}
+	#setting_input{
+		top: 15px;
+	}
+	.setting_list_div #sign{
+		width: 20%;
+	}
+}
