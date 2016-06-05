@@ -1,5 +1,6 @@
 <?php
 	require_once('debate_fns.php');
+	session_start();
 	//short variables
 	$username = $_POST['username'];
 	$password = $_POST['passwd'];
@@ -13,10 +14,8 @@
 		if(login($username,$password)){
 			$_SESSION['valid_user'] = $username;
 			//$_SESSION['passwd'] = $passwd;
-			do_html_header("登陆成功");
-			url('main_page.php');
-			echo "Logged in as ".$_SESSION['valid_user']."</ br>";
-			do_html_footer();
+			$_SESSION['num'] += 1;
+			header("location:main_page.php");
 		}else{
 			throw new Exception("用户名或密码错误");
 		}

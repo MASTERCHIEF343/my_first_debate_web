@@ -36,8 +36,7 @@
 	do_new_post_header($_SESSION['valid_user']);
 	display_new_post_form($parent, $area, $title, $message, $poster);
 	if($error) {
-	   echo "<p>Your message was not stored.</p>
-	         <p>Make sure you have filled in all fields and try again.</p>";
+	   echo "<p style='width:30%;margin:20px auto;'>你的文章不能发表!</p>";
 	}
 	do_main_page_footer();
 ?>

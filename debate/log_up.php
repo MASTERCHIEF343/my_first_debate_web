@@ -1,5 +1,6 @@
 <?php
 	require_once('debate_fns.php');
+	session_start();
 	//short variables
 	$username = $_POST['username'];
 	$passwd = $_POST['password'];
@@ -25,11 +26,9 @@
 		//register session variable
 		$_SESSION['valid_user'] = $username;
 		//$_SESSION['passwd'] = $passwd;
-		
 		//provide links to main pages
-		do_html_header("注册成功");
-		url("main_page.php");
-		dp_html_footer();
+		$_SESSION['num'] = 0;
+		header("location:main_page.php");
 	}
 	catch(Exception $e){
 		do_html_header('Problem:');

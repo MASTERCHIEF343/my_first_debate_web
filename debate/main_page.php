@@ -1,7 +1,6 @@
 <?php
 	require_once('debate_fns.php');
 	session_start();
-	
 	//create session variable
 	if(!isset($_SESSION['expanded'])){
 		$_SESSION['expanded'] = array();
@@ -24,6 +23,13 @@
 	}
 
 	do_main_page_header();
+	if($_SESSION['num'] == 0){
+		echo "<script type='text/javascript'>
+			window.onload = function(){
+				tub.alert('感谢使用tub.js');
+			}
+		</script>";
+	}
 	display_tree($_SESSION['expanded']);
 	do_main_page_footer();
 ?>

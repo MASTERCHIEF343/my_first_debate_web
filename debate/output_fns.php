@@ -14,11 +14,6 @@
 				<link rel="stylesheet" type="text/css" href="css/main.css">
 			</head>
 			<body>
-				<header>
-					<div id="header">
-						<p><?php echo $title; ?></p>
-					</div>
-				</header>
 		<?php
 	}
 
@@ -55,9 +50,6 @@
 							<div class="input-type">
 								<input type="text" name="email" placeholder="email"></input>
 							</div>
-							<div class="input-type">
-								<input type="text" name="yanzhengma" placeholder="yan zheng ma"></input>
-							</div>
 						</div>
 						<div class="form-footer">
 							<div class="input-type">
@@ -72,9 +64,6 @@
 							</div>
 							<div class="input-type">
 								<input type="password" name="passwd" placeholder="passwd"></input>
-							</div>
-							<div class="input-type">
-								<input type="text" name="yanzhengma" placeholder="yan zheng ma"></input>
 							</div>
 						</div>
 						<div class="form-footer">
@@ -107,11 +96,13 @@
 				<meta name="theme-mainpage" content="web-debate" />
 				<title><?php echo $title; ?></title>
 				<link rel="stylesheet" type="text/css" href="css/main_page.css">
+				<link rel="stylesheet" type="text/css" href="src/tub.css">
+				<script type="text/javascript" src="src/tub.js"></script>
 				<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
 				<script type="text/javascript">
 					$(document).ready(function(){
 						$("#tag").bind("click", function () {
-							$("#nav_top_bar").slideToggle();
+							$("#nav_top_bar").slideToggle(500);
 				          });
 				     })
 					$(document).on("mousewheel DOMMouseScroll", function (e) {
@@ -156,7 +147,7 @@
 									<a href="">消息</a>
 								</li>
 								<li>
-									<a href="personal.php">个人</a>
+									<a href="log_out.php">登出</a>
 								</li>
 							</ul>
 						</div>

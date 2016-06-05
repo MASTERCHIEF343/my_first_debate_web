@@ -320,7 +320,6 @@ a{
 	#navigation > #navigation_content > #nav_top_bar ul{
 		border-top: 1px solid rgba(0,0,0,0.3);
 		float: right;
-		margin-right: 3%;
 	}
 	#navigation > #navigation_content > #nav_top_bar ul li{
 		float: left;
