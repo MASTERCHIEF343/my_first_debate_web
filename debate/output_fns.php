@@ -155,15 +155,8 @@
 								<li>
 									<a href="">消息</a>
 								</li>
-							</ul>
-						</div>
-						<div id="nav_personal">
-							<ul>
 								<li>
 									<a href="personal.php">个人</a>
-								</li>
-								<li>
-									<a href="log_out.php">登出</a>
 								</li>
 							</ul>
 						</div>
@@ -404,63 +397,6 @@
 		echo "</div>";
 	}
 
-	function display_tree2($expanded,$row=0,$start=0){
-		global $table_width;
-		echo "<div id=\"main_content\">";
-		echo "<table width=\"".$table_width."\"> ";
-		//whether display the whole list or sublist
-		if($start > 0){
-			$sublist = true;
-		}else{
-			$sublist = false;
-		}
-		//construct tree to represent conversation
-		$tree = new treenode($start,'','','',1,true,-1,$expanded,$sublist);
-		$tree->display_replay($row,$sublist);
-		echo "</table>";
-		echo "</div>";
-	}
-
-	function display_post($post){
-		global $table_width;
-		if(!$post){
-			return false;
-		}
-		?>
-			<table width="<?php echo $table_width; ?>" cellpadding="4" cellspacing="0">
-				<tr>
-					<td>
-						<strong>From: <?php echo $post['poster'];?></strong><br />
-						<strong>Posted: <?php echo $post['posted'];?></strong>
-					</td>
-					<td>
-						<a href="new_post.php?parent=0"><img src="images/new-post.gif"border="0" width="99" height="39" /></a>
-						<a href="new_post.php?parent=<?php echo $post['postid']; ?>"><img src="images/reply.gif" border="0" width="99" height="39" /></a>
-						<a href="main_page.php?expanded=<?php echo $post['postid']; ?>"><img src="images/index.gif" border="0" width="99" height="39" /></a>
-					</td>
-				</tr>
-				<tr>
-					<td colspan="2">
-						<?php echo nl2br($post['message']); ?>
-					</td>
-				</tr>
-			</table>	
-		<?php
-	}
-
-	function display_replies_line(){
-		global $table_width;
-		?>
-			<table width="<?php echo $table_width; ?>" cellpadding="4" cellspacing="0">
-				<tr>
-					<td>
-						<strong>Replies to this message</strong>
-					</td>
-				</tr>
-			</table>
-		<?php
-	}
-
 	function do_new_post_header($username){
 		?>
 			<!DOCTYPE html>
@@ -471,11 +407,16 @@
 				<meta name="web-debate" content="theme-new-post" />
 				<title><?php echo "发表问题"; ?></title>
 				<link rel="stylesheet" type="text/css" href="css/new_post.css">
+				<script type="text/javascript">
+						function go_back(){
+							history.go(-1);
+						}
+				</script>
 			</head>
 			<body>
 				<header>
 					<div id="nav">
-						<a href="main_page.php"></a>
+						<a onclick="go_back()" id="alink"></a>
 						<div id="nav-user">
 							<div></div>
 							<span>
@@ -485,8 +426,6 @@
 						</div>
 					</div>
 				</header>
-			</body>
-			</html>
 		<?php
 	}
 
@@ -497,9 +436,9 @@
 				<table cellpadding="0" cellspacing="0" border="0" width="<?php echo $table_width; ?>">
 					<form action="store_new_post.php?expand=<?php echo $parent;?>#<?php echo $parent;?>" method="post">
 						<tr class="tr-css">
-							<td class="text-align">你的姓名</td>
+							<td class="text-align">姓名</td>
 							<td class="text-input">
-								<input type="text" name="poster" value="<?php echo $poster; ?>" size="20" maxlength="20"></input>
+								<input type="text" name="poster" value="<?php echo $_SESSION['valid_user']; ?>" size="20" maxlength="20"></input>
 							</td>
 						</tr>
 						<tr class="tr-css">
@@ -509,7 +448,7 @@
 						<tr class="tr-css">
 							<td class="text-align">内容</td>
 							<td colspan="2">
-							  <textarea name="message" rows="10" cols="50"><?php echo stripslashes($message);?></textarea>
+							  <textarea id="message" name="message" rows="10" cols="50"></textarea>
 							</td>
 						</tr>
 						<tr class="tr-css">
@@ -523,6 +462,86 @@
 		<?php
 	}
 
+	function do_view_post_header($username){
+		?>
+			<!DOCTYPE html>
+			<html lang="en">
+			<head>
+				<meta name="viewport" content="width=device-width,initial-scale=1" />
+				<meta name="author" content="Anonymous" />
+				<meta name="web-debate" content="theme-new-post" />
+				<title><?php echo "发表问题"; ?></title>
+				<link rel="stylesheet" type="text/css" href="css/view_post.css">
+				<script type="text/javascript">
+						function go_back(){
+							history.go(-1);
+						}
+					
+				</script>
+			</head>
+			<body>
+				<header>
+					<div id="nav">
+						<a onclick="go_back()" id="alink"></a>
+						<div id="nav-user">
+							<div></div>
+							<span>
+								<?php echo $username; ?>
+							</span>
+							<h6>孤独的人不会走出房间</h6>
+						</div>
+					</div>
+				</header>
+		<?php
+	}
 
+	function display_post($post){
+		global $table_width;
+		if(!$post){
+			return false;
+		}
+		?>
+			<div id="main-content">
+			<table width="<?php echo $table_width; ?>" cellpadding="4" cellspacing="0">
+				<tr>
+					<td colspan="2">
+						<?php echo nl2br($post['message']); ?>
+						<br />
+						<br />
+						<span id="post-time">创建于: <?php echo $post['posted'];?></span>
+					</td>
+				</tr>
+			</table>	
+			</div>
+		<?php
+	}
+
+
+	function display_tree2($expanded,$row=0,$start=0){
+		//whether display the whole list or sublist
+		if($start > 0){
+			$sublist = true;
+		}else{
+			$sublist = false;
+		}
+		//construct tree to represent conversation
+		$tree = new treenode($start,'','','',1,true,-1,$expanded,$sublist);
+		$tree->display_replay($row,$sublist);
+	}
+
+	function display_bottom_bar(){
+		?>
+			<div id="bottom_bar">
+				<ul>
+					<li>
+						<a href="new_post.php?parent=0">new</a>
+					</li>
+					<li>
+						<a href="new_post.php?parent=<?php echo $post['postid']; ?>">reply</a>
+					</li>
+				</ul>
+			</div>
+		<?php
+	}
 
 ?>

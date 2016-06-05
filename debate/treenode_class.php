@@ -68,13 +68,15 @@
 
 		function display_replay($row,$sublist=false){
 			if($this->m_depth>-1){
-				echo "<div id='message_box' ><h5>";
+				echo "<div id='rel_list'>";
+				echo "<img src='images/personal.png' ><div id='rel_message'>";
+				echo "<h5>";
 				echo "$this->m_poster";
 				echo "</h5>";
-				echo "<h3><a name=\"".$this->m_postid."\"><a href=
-	               \"view_post.php?postid=".$this->m_postid."\">".$this->m_title."</a></h3>";
-	               $row++;
-	               echo "</div>";
+				echo "<span>回复:<a name=\"".$this->m_postid."\"><a href=
+	               \"view_post.php?postid=".$this->m_postid."\">".$this->m_title."</a></span></div>";
+	             echo "</div>";
+	             $row++; 
 				}
 				$num_children = sizeof($this->m_childlist);
 				for($i = 0; $i<$num_children; $i++) {

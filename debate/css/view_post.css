@@ -72,32 +72,71 @@
 	#main-content table{
 		width: 100%;
 	}
-	#main-content table tbody{
+	#main-content table tr{
 		width: 100%;
 	}
-	.tr-css{
-		width: 100%;
-		height: 50px;
-	}
-	.text-align{
-		font-size: 10px;
+	#main-content table tr:first-child{
 		font-weight: bold;
-		text-align: right;
-		padding-right: 10px;
+		font-size: 17px;
 	}
-	.text-input{
-		width: 70%;
+	#main-content table tr td{
+		width: 100%;
+		text-indent: 5%;
 	}
-	.text-input input{
-		width: 200px;
+	#post-time{
+		display: block;
+		position: absolute;
+		right: 20px;
+		font-size: 12px;
+		line-height: 12px;
+		font-weight: 400;
 	}
-	#submit{
-		position: relative;
-		left: 100%;
+	#rel_list{
+		width: 80%;
+		margin: 0 auto;
+		margin-top: 200px;
 	}
-	#message{
-		width: 150px;
-		height: 50px;
-		font-size: 14px;
+	#rel_list img{
+		float: left;
+		margin-top: 3px;
+		margin-bottom: 7px;
+		margin-left: 10px;
+		margin-right: 7px;
+		width: 30px;
+		height: 30px;
+	}
+	#rel_message{
+		float: left;
+		width: 85%;
+		height: 70px;
+		z-index: 22;
+	}
+	#rel_message a{
+		text-decoration: none;
+	}
+	#bottom_bar{
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 40px;
+	}
+	#bottom_bar ul{
+		width: 100%;
+		height: 40px;
+	}
+	#bottom_bar ul li{
+		list-style-type: none;
+	}
+	#bottom_bar ul li a{
+		display: block; 
+		float: left;
+		width: 50%;
+		height: 40px;
+		line-height: 40px;
+		font-size: 18px;
+		text-decoration: none;
+		text-align: center;
+		background-color: #0767c8;
+		color: white;
 	}
 }
