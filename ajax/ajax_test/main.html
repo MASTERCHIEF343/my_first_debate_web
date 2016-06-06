@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+	<style type="text/css">
+		#showtime{
+			width: 200px;
+			height: 40px;
+			line-height: 40px;
+			margin: 100px auto;
+			color: rgba(255,255,255,0.8);
+			background-color: rgba(255,0,0,0.3);
+		}
+	</style>
+</head>
+<body>
+	<P id="showtime" onmouseover="javascript:getServerTime();"></P>
+</body>
+<script type="text/javascript" src="ajax_function.js"></script>
+<script type="text/javascript">
+	var myReq = getXMLHTTPRequest();
+</script>
+</html>
