@@ -12,6 +12,8 @@
 				<meta name="theme-login" content="web-debate" />
 				<title><?php echo $title; ?></title>
 				<link rel="stylesheet" type="text/css" href="css/main.css">
+				<link rel="stylesheet" type="text/css" href="src/tub.css">
+				<script type="text/javascript" src="src/tub.js"></script>
 			</head>
 			<body>
 		<?php
@@ -64,6 +66,11 @@
 							</div>
 							<div class="input-type">
 								<input type="password" name="passwd" placeholder="passwd"></input>
+							</div>
+							<div class="input-type">
+								<input id="yanzhengma" type="text" name="validate" placeholder="验证码"></input>
+								<img src="checking_password.php" style="width:100px;height:25px;" id="code"/>  
+								<a href="javascript:changeCode()">看不清，换一张</a>
 							</div>
 						</div>
 						<div class="form-footer">

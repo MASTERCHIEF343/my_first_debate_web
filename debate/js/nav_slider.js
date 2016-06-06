@@ -20,3 +20,7 @@ window.onload = function(){
 		signup_form.style.display = 'none';
 		signin_form.style.display = 'block';
 	}
+
+	function changeCode(){
+		document.getElementById('code').src = "checking_password.php?id="+Math.random();
+	}

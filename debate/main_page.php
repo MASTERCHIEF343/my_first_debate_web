@@ -26,7 +26,13 @@
 	if($_SESSION['num'] == 0){
 		echo "<script type='text/javascript'>
 			window.onload = function(){
-				tub.alert('感谢使用tub.js');
+				tub.alert('感谢使用我的论坛');
+			}
+		</script>";
+	}else{
+		echo "<script type='text/javascript'>
+			window.onload = function(){
+				tub.alert('欢迎再次回来');
 			}
 		</script>";
 	}

@@ -67,8 +67,16 @@ body{
 	text-indent: 3px;
 	text-decoration: none;
 }
+.input-type a{
+	text-decoration: none;
+	color:red; 
+	font-size: 12px;
+}
+.input-type a:hover{
+	color: orange;
+}
 .form-footer{
-	margin: 15px auto;	
+	margin: 45px auto;	
 }
 .tab-submit{
 	background-color: #5bb8ff;

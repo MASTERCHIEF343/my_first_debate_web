@@ -32,8 +32,14 @@
 	}
 	catch(Exception $e){
 		do_html_header('Problem:');
-		echo $e->getMessage();
-		do_html_footer();
+		$error = $e->getMessage();
+		echo "<script type='text/javascript'>
+			window.onload = function(){
+				tub.alert('$error');
+			}
+		</script>";
+		echo "<meta http-equiv='refresh' content='0.8; url=signup.php'' />";
+		do_main_page_footer();
 		exit;
 	}
 ?>
