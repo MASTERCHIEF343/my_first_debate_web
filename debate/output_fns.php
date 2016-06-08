@@ -1,4 +1,5 @@
 <?php
+	header("Content-type: text/html; charset=utf-8");
 	include('debate_fns.php');
 	$table_width = '580';
 	session_start();
