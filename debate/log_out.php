@@ -7,7 +7,7 @@
 	do_html_header('Logged out!');
 	if(!empty($old_user)){
 		if($result_dest){
-			header("location:signup.php");
+			header("location:index.php");
 		}else{
 			echo "无法登出!</br>";
 			do_html_footer();

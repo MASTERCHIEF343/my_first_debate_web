@@ -14,6 +14,7 @@
 				<link rel="stylesheet" type="text/css" href="css/main.css">
 				<link rel="stylesheet" type="text/css" href="src/tub.css">
 				<script type="text/javascript" src="src/tub.js"></script>
+				<script type="text/javascript" src="js/ajax.js"></script>
 			</head>
 			<body>
 		<?php
@@ -59,13 +60,13 @@
 							</div>
 						</div>
 					</form>
-					<form id="signin_form" name="signin_form" method="post" action="log_in.php">
+					<form id="signin_form" name="signin_form">
 						<div class="form-view">
 							<div class="input-type">
-								<input type="text" name="username" placeholder="username"></input>
+								<input id="username" type="text" name="username" placeholder="username"></input>
 							</div>
 							<div class="input-type">
-								<input type="password" name="passwd" placeholder="passwd"></input>
+								<input id="password" type="password" name="passwd" placeholder="passwd"></input>
 							</div>
 							<div class="input-type">
 								<input id="yanzhengma" type="text" name="validate" placeholder="验证码"></input>
@@ -75,12 +76,15 @@
 						</div>
 						<div class="form-footer">
 							<div class="input-type">
-								<input id="sign" class="tab-submit" type="submit" value="登陆" ></input>
+								<input onclick="javascript:login();" id="sign" class="tab-submit" type="button" value="登陆" ></input>
 							</div>
 						</div>
 					</form>
 				</div>
 			</div>
+			<script type="text/javascript">
+				var myReq = getXMLHTTPRequest();
+			</script>
 
 		<?php
 	}
