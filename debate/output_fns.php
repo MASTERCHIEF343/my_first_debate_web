@@ -106,7 +106,7 @@
 				<meta name="viewport" content="width=device-width,initial-scale=1" />
 				<meta name="author" content="Anonymous" />
 				<meta name="theme-mainpage" content="web-debate" />
-				<title><?php echo $title; ?></title>
+				<title></title>
 				<link rel="stylesheet" type="text/css" href="css/main_page.css">
 				<link rel="stylesheet" type="text/css" href="src/tub.css">
 				<script type="text/javascript" src="src/tub.js"></script>
@@ -114,7 +114,7 @@
 				<script type="text/javascript">
 					$(document).ready(function(){
 						$("#tag").bind("click", function () {
-							$("#nav_top_bar").slideToggle(500);
+							$("#nav_top_bar").slideToggle(800);
 				          });
 				     })
 					$(document).on("mousewheel DOMMouseScroll", function (e) {
@@ -150,13 +150,7 @@
 									<a href="main_page.php">首页</a>
 								</li>
 								<li>
-									<a href="#">话题</a>
-								</li>
-								<li>
 									<a href="new_post.php?parent=0">发帖</a>
-								</li>
-								<li>
-									<a href="">消息</a>
 								</li>
 								<li>
 									<a href="log_out.php">登出</a>

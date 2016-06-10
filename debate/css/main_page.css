@@ -13,6 +13,7 @@ a{
 	height: 50px;
 	color: #fff;
 	background-color: #0767c8;
+	z-index: 999;
 }
 #navigation > #navigation_content{
 	height: inherit;
@@ -115,6 +116,10 @@ a{
 #title_bar img{
 	height: 20px;
 	width: 20px;
+}
+#title_bar a{
+	line-height: 18px;
+	font-size: 15px;
 }
 /**show message**/
 @media screen and (min-width: 930px) {
@@ -270,7 +275,7 @@ a{
 			margin-right: 10px;
 		}
 }
-@media screen and (max-width: 930px ){
+@media screen and (min-width: 768px ) and (max-width: 930px ){
 	#navigation{
 		position: fixed;
 		top: 0px;
@@ -492,6 +497,7 @@ a{
 		z-index: 1;
 	}
 	#title_bar{
+		width: 100%;
 		height: 30px;
 		padding-top: 15px;
 		margin-top: 50px;
@@ -502,6 +508,7 @@ a{
 	}
 	#title_bar img{
 		display: block;
+		float: left;
 		margin-right: 3px;
 	}
 	#title_bar span{
@@ -522,6 +529,7 @@ a{
 		border-top: 3px solid rgba(0,0,0,0.1);
 		border-bottom: 3px solid rgba(0,0,0,0.1);
 		padding-top: 5px;
+		z-index: 1;
 	}
 	#span_one{
 		display: block;
