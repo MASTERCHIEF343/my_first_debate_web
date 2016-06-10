@@ -1,19 +1,20 @@
 <?php
+	require('debate_fns.php');
 	//register new member
 	function register($username,$password,$email){
 		$conn = db_connect();
 		$results = "select * from user where username='".$username."' ";
 		$results = $conn->query("select * from user where username='".$username."' ");
 		if(!$results){
-			throw new Exception("ÎÞ·¨ÑéÖ¤ÓÃ»§");
+			throw new Exception("æ— æ³•éªŒè¯ç”¨æˆ·");
 		}
 		if($results->nuw_rows>1){
-			throw new Exception("ÓÃ»§ÃûÒÑ¾­±»×¢²á");
+			throw new Exception("ç”¨æˆ·åå·²ç»è¢«æ³¨å†Œ");
 		}
 		//success
 		$result = $conn->query("insert into user values ('".$username."',sha1('".$password."'),'".$email."') ");
 		if(!$result){
-			throw new Exception("ÏÖÔÚ»¹²»ÄÜ×¢²á");
+			throw new Exception("çŽ°åœ¨è¿˜ä¸èƒ½æ³¨å†Œ");
 		}
 		return true;
 	}
@@ -22,7 +23,7 @@
 	function db_connect(){
 		$result = new mysqli('localhost','debate','debate','debate');
 		if(!$result){
-			throw new Exception("ÎÞ·¨Á¬½ÓÊý¾Ý¿â");
+			throw new Exception("æ— æ³•è¿žæŽ¥æ•°æ®åº“");
 		}else{
 			return $result;
 		}
@@ -34,7 +35,7 @@
 		$query = "select * from user where username='".$username."' and passwd=sha1('".$passwd."') ";
 		$results = $conn->query($query);
 		if(!$results){
-			throw new Exception("ÎÞ·¨ÑéÖ¤ÓÃ»§");
+			throw new Exception("æ— æ³•éªŒè¯ç”¨æˆ·");
 		}
 		if($results->num_rows > 0){
 			return true;
@@ -48,18 +49,9 @@
 		$conn = db_connect();
 		$result = $conn->query("update user set passwd=sha1('".$new."') where username='".$username."' ");
 		if(!$result){
-			throw new Exception("ÎÞ·¨¸ü¸ÄÃÜÂë");
+			return false;
 		}else{
 			return true;
-		}
-	}
-
-	function check_username($old,$new){
-		$conn = db_connect();
-		$query = "select * from";
-		$result = $conn->query($query);
-		if(!$result){
-			throw new Exception("ÎÞ·¨¸ü¸ÄÓÃ»§Ãû");
 		}
 	}
 
@@ -68,7 +60,7 @@
 		$query = "select postid from header where children=1 ";
 		$result = $conn->query($query);
 		if(!$result){
-			throw new Exception("ÎÞ·¨Á¬½ÓÊý¾Ý¿â");
+			throw new Exception("æ— æ³•è¿žæŽ¥æ•°æ®åº“");
 		}
 		$num = $results->num_rows;
 		for($i = 0;$i < $num;$i++){
@@ -134,17 +126,19 @@
 
 	function store_new_post($post){
 		$conn = db_connect();
-		if(!filled_out($post)){
-			return false;
+		// check no fields are blank
+		if(!filled_out($post))  {
+		  return false;
 		}
-		//turn to array
 		$post = clean_all($post);
-		if($post['parent'] != 0){
-			$query = "select postid from header where postid='".$post['parent']."' ";
-			$result = $conn->query($query);
-			if($result->num_rows != 1){
-				return false;
-			}
+
+		//check parent exists
+		if($post['parent']!=0)   {
+		  $query = "select postid from header where postid = '".$post['parent']."'";
+		  $result = $conn->query($query);
+		  if($result->num_rows!=1)  {
+		    return false;
+		  }
 		}
 
 

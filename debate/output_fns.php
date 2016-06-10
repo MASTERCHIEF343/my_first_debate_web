@@ -166,8 +166,10 @@
 					</div>
 				</div>
 				<div id="title_bar">
-					<img src="images/home.png">
-					<span>最新动态</span>
+					<div>
+						<img src="images/home.png">
+						<span>最新动态</span>
+					</div>
 					<span id="setiting">
 						<a href="personal.php">设置</a>
 						<img src="images/setting.png">

@@ -19,17 +19,10 @@
 		//if don't have parentid
 		if(!$parent){
 			$parent = 0;
-			if(!$title){
-				$title = 'New Post';
-			}
 		}else{
 		// get post name
 		$title = get_post_title($parent);
 		//append Re
-		if(strstr($title, 'Re: ') == false){
-			$title = 'Re: '.$title;
-		}
-		$title = substr($title, 0,20);
 		$message = add_quoting(get_post_message($parent));
 		}
 	}

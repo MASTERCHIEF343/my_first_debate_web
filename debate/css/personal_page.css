@@ -217,3 +217,8 @@
 	.setting_list_div #sign{
 		width: 20%;
 	}
+	#err_content{
+		position: relative;
+		width: 100%;
+		top: 265px;
+	}

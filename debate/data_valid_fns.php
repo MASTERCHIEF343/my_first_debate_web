@@ -27,9 +27,9 @@
 	//sql or others turn to html > htmlentities
 	//delete "html" tags > strip_tags
 	function clean($string){
-		$string = trim($string);
-		$string = htmlentities($string);
-		$string = strip_tags($string);
+		$string = trim($string); //remove white-spacing
+		$string = htmlentities($string);  //change to html
+		$string = strip_tags($string);  //delete html tags
 		return $string;
 	}
 ?>

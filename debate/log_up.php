@@ -38,7 +38,7 @@
 				tub.alert('$error');
 			}
 		</script>";
-		echo "<meta http-equiv='refresh' content='0.8; url=index.php.php'' />";
+		echo "<meta http-equiv='refresh' content='0.8; url=index.php' />";
 		do_main_page_footer();
 		exit;
 	}

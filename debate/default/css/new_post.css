@@ -1,0 +1,101 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+/**header**/
+header{
+		position: relative;
+		top: 0px;
+		width: 100%;
+		height: 150px;
+	}
+	header #nav{
+		width: 100%;
+		height: 100%;
+		background-color: #0767c8;
+	}
+	header #nav a{
+		position: absolute;
+		top: 20px;
+		left: 10px;
+		width: 30px;
+		height: 30px;
+		background: url(../images/arraow.png);
+		background-size: 100%;
+	}
+	header #nav #nav-user{
+		position: absolute;
+		width: 80%;
+		height: 60px;
+		margin-left: 10%;
+		bottom: -10px;
+		background-color: rgba(255,255,255,1);
+		border: 1px solid rgba(0,0,0,0.3);
+		box-shadow: 5px 5px 3px rgba(0,0,0,0.6);
+	}
+	header #nav #nav-user div{
+		position: absolute;
+		left: 20px;
+		height: 40px;
+		width: 40px;
+		top: 10px;
+		border-radius: 50%;
+		background: url(../images/personal.png);
+		background-size: 100%;
+	}
+	header #nav #nav-user span{
+		display: block;
+		position: absolute;
+		top: 14px;
+		left: 70px;
+		height: 8px;
+		line-height: 8px;
+		font-size: 18px;
+		font-weight: bold;
+	}
+	header #nav #nav-user h6{
+		position: absolute;
+		top: 32px;
+		left: 70px;
+		height: 5px;
+		font-size: 9px;
+		color: rgba(0,0,0,0.7);
+	}
+	/*show new post form*/
+	#main-content{
+		position: relative;
+		width: 80%;
+		margin: 0 auto;
+		margin-top: 50px;
+	}
+	#main-content table{
+		width: 100%;
+	}
+	#main-content table tbody{
+		width: 100%;
+	}
+	.tr-css{
+		width: 100%;
+		height: 50px;
+	}
+	.text-align{
+		font-size: 14px;
+		font-weight: bold;
+		text-align: right;
+		padding-right: 10px;
+	}
+	.text-input{
+		width: 70%;
+	}
+	.text-input input{
+		width: 300px;
+	}
+	#submit{
+		position: relative;
+		left: 100%;
+	}
+	#message{
+		width: 300px;
+		height: 150px;
+		font-size: 18px;
+	}
