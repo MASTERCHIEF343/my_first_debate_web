@@ -19,7 +19,7 @@
 		}
 		do_change_username();
 		echo "<div id='main_content'>";
-		echo "password changed.";
+		echo "密码 changed!";
 		echo "</div>";
 		do_main_page_footer();
 	}

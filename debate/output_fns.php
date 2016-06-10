@@ -160,7 +160,7 @@
 					</div>
 				</div>
 				<div id="title_bar">
-					<div>
+					<div id="title_bar_left">
 						<img src="images/home.png">
 						<span>最新动态</span>
 					</div>

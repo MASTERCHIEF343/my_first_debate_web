@@ -172,7 +172,7 @@ a{
 		#navigation > #navigation_content > #nav_top_bar ul{
 			border-top: 1px solid rgba(0,0,0,0.3);
 			float: left;
-			margin-left: 60px;
+			margin-left: 18%;
 		}
 		#navigation > #navigation_content > #nav_top_bar ul li{
 			float: left;
@@ -221,10 +221,11 @@ a{
 		}
 		#title_bar #setiting{
 			float: right;
-			margin-right: 3px;
+			margin-top: -20px;
+			margin-right: 15px;
 		}
 		#main_content{
-			margin: 0px auto;
+			margin: 15px auto;
 			width: 750px;
 		}
 		#navigation > #navigation_content > #nav_personal{
@@ -248,7 +249,7 @@ a{
 			margin-bottom: 20px;
 		}
 		#message_box h5{
-			font-family: '΢���ź�';
+			font-family: 'Î¢ÈíÑÅºÚ';
 			font-size: 14px;
 			color: blue;
 		}
@@ -259,7 +260,7 @@ a{
 		#message_box h6{
 			margin-top: 10px;
 			display: inline-block;
-			font-family: '΢���ź�';
+			font-family: 'Î¢ÈíÑÅºÚ';
 			font-weight: 400;
 			font-size: 10px;
 			color: #333;
@@ -325,6 +326,7 @@ a{
 	#navigation > #navigation_content > #nav_top_bar ul{
 		border-top: 1px solid rgba(0,0,0,0.3);
 		float: right;
+		margin-right: 5%;
 	}
 	#navigation > #navigation_content > #nav_top_bar ul li{
 		float: left;
@@ -373,7 +375,8 @@ a{
 	}
 	#title_bar #setiting{
 		float: right;
-		margin-right: 3px;
+		margin-top: -20px;
+		margin-right: 10px;
 	}
 	#main_content{
 		margin: 0px auto;
@@ -400,7 +403,7 @@ a{
 		margin-bottom: 20px;
 	}
 	#message_box h5{
-		font-family: '΢���ź�';
+		font-family: 'Î¢ÈíÑÅºÚ';
 		font-size: 14px;
 		color: blue;
 	}
@@ -411,7 +414,7 @@ a{
 	#message_box h6{
 		margin-top: 10px;
 		display: inline-block;
-		font-family: '΢���ź�';
+		font-family: 'Î¢ÈíÑÅºÚ';
 		font-weight: 400;
 		font-size: 10px;
 		color: #333;
@@ -549,7 +552,7 @@ a{
 	#message_box h5{
 		margin-top: 7px;
 		text-indent: 18px;
-		font-family: '΢���ź�';
+		font-family: 'Î¢ÈíÑÅºÚ';
 		font-size: 14px;
 		color: blue;
 	}
@@ -561,7 +564,7 @@ a{
 	#message_box h6{
 		margin-top: 10px;
 		display: inline-block;
-		font-family: '΢���ź�';
+		font-family: 'Î¢ÈíÑÅºÚ';
 		font-weight: 400;
 		font-size: 10px;
 		color: #333;

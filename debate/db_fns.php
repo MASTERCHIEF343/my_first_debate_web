@@ -55,6 +55,16 @@
 		}
 	}
 
+	function change_username($new,$old){
+		$conn = db_connect();
+		$query = "update user set username='".$new."' where username='".$old."' ";
+		$result = $conn->query($query);
+		if(!$result){
+			return false;
+		}
+		return true;
+	}
+
 	function expand_all(&$expanded){
 		$conn = db_connect();
 		$query = "select postid from header where children=1 ";

@@ -10,12 +10,13 @@ create table user(
 
 create table header(
 	parent int not null,
-	poster char(16) not null references user(username),
+	poster char(16) not null ,
 	title char(20) not null,
 	children int default 0 not null,
 	area int default 1 not null,
 	posted datetime not null,
-	postid int unsigned not null auto_increment primary key
+	postid int unsigned not null auto_increment primary key,
+	foreign key(poster) references user(username) on update cascade
 );
 
 create table body(
