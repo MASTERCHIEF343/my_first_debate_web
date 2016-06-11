@@ -5,11 +5,7 @@
 	$poster = $_POST['poster'];
 	$message = $_POST['message'];
 	//if has parent id
-	if(isset($_GET['parent'])){
-		$parent = $_GET['parent'];
-	}else{
-		$parent = $_POST['parent'];
-	}
+	$parent = $_GET['parent'];
 	//area
 	if(!$area){
 		$area = 1;
@@ -29,7 +25,7 @@
 	do_new_post_header($_SESSION['valid_user']);
 	display_new_post_form($parent, $area, $title, $message, $poster);
 	if($error) {
-	   echo "<p style='width:30%;margin:20px auto;'>你的文章不能发表!$title $poster $message</p>";
+	   echo "<p style='width:30%;margin:20px auto;'>你的文章不能发表!</p>";
 	}
 	do_main_page_footer();
 ?>

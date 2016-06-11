@@ -143,15 +143,12 @@
 		$post = clean_all($post);
 
 		//check parent exists
-		if($post['parent']!=0)   {
-		  $query = "select postid from header where postid = '".$post['parent']."'";
-		  $result = $conn->query($query);
-		  if($result->num_rows!=1)  {
-		    return false;
-		  }
+		if(isset($post['parent'])){
+			$post['parent'] = $_SESSION['parent'];
 		}
-
-
+		if(!isset($post['parent'])){
+			$post['parent'] = $_GET['expand'];
+		}
 		//check not a duplicat(fu ben)
 		$query = "select header.postid from header, body where header.postid = body.postid and header.parent = '".$post['parent']."' and header.poster = '".$post['poster']."' and header.title = '".$post['title']."' and header.area = '".$post['area']."' and body.message = '".$post['message']."' ";
 		$result2 = $conn->query($query);
@@ -162,9 +159,8 @@
 			$this_row = $result2->fetch_assoc();
 			return $this_row[0];
 		}
-
 		$query = "insert into header values ('".$post['parent']."',
-             '".$post['poster']."','".$post['title']."',0,'".$post['area']."',now(),NULL)";
+             '".$post['poster']."','".$post['title']."',0,0,now(),NULL)";
           $result = $conn->query($query);
           if(!$result){
           	return false;

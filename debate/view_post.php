@@ -8,6 +8,6 @@
     if($post['children']){
         display_tree2($_SESSION['expanded'], 0, $postid);
     }
-    display_bottom_bar();
+    display_bottom_bar($post);
     do_main_page_footer();
 ?>

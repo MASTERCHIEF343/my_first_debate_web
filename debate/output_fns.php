@@ -528,7 +528,7 @@
 		$tree->display_replay($row,$sublist);
 	}
 
-	function display_bottom_bar(){
+	function display_bottom_bar($post){
 		?>
 			<div id="bottom_bar">
 				<ul>
