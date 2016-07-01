@@ -1,6 +1,7 @@
 # 小型Linux+PHP+Apache+Mysql论坛原型
 这是我写的一个php论坛小demo
 当然了，初衷就是为了练手呗～
+##地址：[114.215.102.244](http://114.215.102.244/)  
 ##基本配置<br />
 ###1编译环境LAMP
 archlinux+Apache+Mysql+PHP<br />
